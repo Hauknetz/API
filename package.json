@@ -4,8 +4,10 @@
   "description": "Die vollständige API von Smoking Bud's welche sie als vorletztes nutzen.",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm install && nodemon src/index.js"
+    "start:test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "npm install && nodemon src/index.js",
+    "start:build": "",
+    "start:prod": ""
   },
   "keywords": [
     "Backend",
