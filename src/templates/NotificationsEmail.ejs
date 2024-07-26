@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benachrichtigung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .header {
+            background-color: #007BFF;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+        }
+        .notification {
+            background-color: #f9f9f9;
+            border-left: 4px solid #007BFF;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            font-size: 12px;
+            color: #888888;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Benachrichtigung</h1>
+        </div>
+        <div class="content">
+            <p>Hallo <%= recipientName %>,</p>
+            <p>Sie haben die folgenden Benachrichtigungen:</p>
+            
+            <% notifications.forEach(function(notification) { %>
+                <div class="notification">
+                    <p><strong><%= notification.title %></strong></p>
+                    <p><%= notification.message %></p>
+                </div>
+            <% }); %>
+
+            <p>Überprüfen Sie Ihr Konto, um weitere Details zu sehen.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; <%= new Date().getFullYear() %> Ihr Unternehmen. Alle Rechte vorbehalten.</p>
+        </div>
+    </div>
+</body>
+</html>
