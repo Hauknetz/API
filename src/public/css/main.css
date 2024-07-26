@@ -1,0 +1,74 @@
+/* Color Variables */
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+
+    /* Grayscale */
+    --white: #ffffff;
+    --black: #000000;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+}
+
+/* Font Variables */
+:root {
+    --font-family-sans-serif: 'Arial', sans-serif;
+    --font-family-serif: 'Georgia', serif;
+    --font-family-monospace: 'Courier New', monospace;
+
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-sm: 14px;
+    --font-size-xs: 12px;
+
+    --line-height-base: 1.5;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+}
+
+/* Spacing Variables */
+:root {
+    --spacer: 1rem;
+    --spacer-lg: 1.5rem;
+    --spacer-sm: 0.5rem;
+}
+
+/* Border Variables */
+:root {
+    --border-width: 1px;
+    --border-color: #dee2e6;
+    --border-radius: 0.25rem;
+}
+
+/* Box Shadow Variables */
+:root {
+    --box-shadow-sm: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    --box-shadow-md: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    --box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, .2);
+    --box-shadow-xl: 0 1.5rem 4rem rgba(0, 0, 0, .3);
+}
+
+/* Image URLs */
+:root {
+    --logo-url: url('/assets/images/logo.png');
+    --background-image: url('/assets/images/background.jpg');
+}
+
+/* Gradient Backgrounds */
+:root {
+    --gradient-primary: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+    --gradient-secondary: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+}
