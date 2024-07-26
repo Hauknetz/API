@@ -1,0 +1,106 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Element für die Darstellung der Koordinaten
+    const coordsDisplay = document.createElement('div');
+    coordsDisplay.style.position = 'fixed';
+    coordsDisplay.style.bottom = '10px';
+    coordsDisplay.style.right = '10px';
+    coordsDisplay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    coordsDisplay.style.color = 'white';
+    coordsDisplay.style.padding = '5px';
+    coordsDisplay.style.borderRadius = '5px';
+    document.body.appendChild(coordsDisplay);
+
+    // 1. Mouse Move Event
+    document.addEventListener('mousemove', (event) => {
+        coordsDisplay.textContent = `X: ${event.clientX}, Y: ${event.clientY}`;
+    });
+
+    // 2. Mouse Click Event
+    document.addEventListener('click', (event) => {
+        console.log(`Mouse clicked at X: ${event.clientX}, Y: ${event.clientY}`);
+    });
+
+    // 3. Mouse Enter Event
+    const hoverElement = document.querySelector('.hover-element');
+    if (hoverElement) {
+        hoverElement.addEventListener('mouseenter', () => {
+            hoverElement.style.backgroundColor = 'lightblue';
+        });
+    
+        hoverElement.addEventListener('mouseleave', () => {
+            hoverElement.style.backgroundColor = '';
+        });
+    }
+
+    // 4. Mouse Down and Mouse Up Events
+    document.addEventListener('mousedown', (event) => {
+        console.log(`Mouse button ${event.button} pressed at X: ${event.clientX}, Y: ${event.clientY}`);
+    });
+
+    document.addEventListener('mouseup', (event) => {
+        console.log(`Mouse button ${event.button} released at X: ${event.clientX}, Y: ${event.clientY}`);
+    });
+
+    // 5. Mouse Wheel Scroll Event
+    document.addEventListener('wheel', (event) => {
+        console.log(`Mouse wheel scrolled ${event.deltaY} at X: ${event.clientX}, Y: ${event.clientY}`);
+    });
+
+    // 6. Context Menu Event (Right Click)
+    document.addEventListener('contextmenu', (event) => {
+        event.preventDefault();
+        console.log(`Right click at X: ${event.clientX}, Y: ${event.clientY}`);
+    });
+
+    // 7. Drag and Drop
+    const draggable = document.querySelector('.draggable');
+    if (draggable) {
+        draggable.addEventListener('dragstart', (event) => {
+            event.dataTransfer.setData('text/plain', event.target.id);
+        });
+
+        document.addEventListener('dragover', (event) => {
+            event.preventDefault();
+        });
+
+        document.addEventListener('drop', (event) => {
+            event.preventDefault();
+            const data = event.dataTransfer.getData('text/plain');
+            const draggableElement = document.getElementById(data);
+            if (draggableElement) {
+                draggableElement.style.position = 'absolute';
+                draggableElement.style.left = `${event.clientX}px`;
+                draggableElement.style.top = `${event.clientY}px`;
+            }
+        });
+    }
+
+    // 8. Click and Hold (Long Press)
+    let clickTimer;
+    document.addEventListener('mousedown', () => {
+        clickTimer = setTimeout(() => {
+            console.log('Long press detected');
+        }, 1000); // Long press duration in milliseconds
+    });
+
+    document.addEventListener('mouseup', () => {
+        clearTimeout(clickTimer);
+    });
+
+    // 9. Double Click
+    document.addEventListener('dblclick', (event) => {
+        console.log(`Double click at X: ${event.clientX}, Y: ${event.clientY}`);
+    });
+
+    // 10. Mouse Hover (with CSS animation)
+    const hoverAnimElement = document.querySelector('.hover-animate');
+    if (hoverAnimElement) {
+        hoverAnimElement.addEventListener('mouseenter', () => {
+            hoverAnimElement.classList.add('hover-animation');
+        });
+
+        hoverAnimElement.addEventListener('mouseleave', () => {
+            hoverAnimElement.classList.remove('hover-animation');
+        });
+    }
+});
