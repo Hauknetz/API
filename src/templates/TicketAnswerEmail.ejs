@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antwort auf dein Support-Ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .header {
+            background-color: #007BFF;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+        }
+        .ticket-details {
+            background-color: #f9f9f9;
+            border-left: 4px solid #007BFF;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            font-size: 12px;
+            color: #888888;
+            background-color: #f4f4f4;
+        }
+        .ticket-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .ticket-message {
+            margin: 10px 0;
+        }
+        .response {
+            background-color: #e8f0fe;
+            border-left: 4px solid #0d6efd;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Antwort auf dein Support-Ticket</h1>
+        </div>
+        <div class="content">
+            <p>Hallo <%= recipientName %>,</p>
+            <p>Du hast eine neue Antwort auf dein Support-Ticket erhalten. Hier sind die Details:</p>
+            
+            <div class="ticket-details">
+                <p class="ticket-title">Ticket-ID: <%= ticket.id %></p>
+                <p class="ticket-message">Betreff: <%= ticket.subject %></p>
+                <p>Beschreibung: <%= ticket.description %></p>
+                <p>Priorität: <%= ticket.priority %></p>
+            </div>
+
+            <div class="response">
+                <p><strong>Antwort:</strong></p>
+                <p><%= responseMessage %></p>
+            </div>
+
+            <p>Vielen Dank, dass du unser Support-Team kontaktiert hast. Wenn du weitere Fragen oder Anliegen hast, antworte bitte direkt auf dieses Ticket.</p>
+        </div>
+        <div class="footer">
+            <p>&copy; <%= new Date().getFullYear() %> Dein Unternehmen. Alle Rechte vorbehalten.</p>
+        </div>
+    </div>
+</body>
+</html>
