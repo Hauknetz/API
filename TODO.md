@@ -10,6 +10,9 @@
 - [ ] Integrate Microsoft
 - [ ] Integrate Apple
 - [ ] Implement Minecraft
+- [ ] Integrate oAuth2
+- [ ] Integrate Social Login
+- [ ] Implement Chart
 - [ ] Creating Documentation
 - [ ] Creating API Overview explain.
 
