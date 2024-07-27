@@ -124,6 +124,24 @@ module.exports = {
     Github: {
         ApiToken: process.env.GITHUB_API_TOKEN,
     },
+    NextCloud: {
+        baseUrl: process.env.NEXTCLOUD_BASE_URL,
+        username: process.env.NEXTCLOUD_USERNAME,
+        password: process.env.NEXTCLOUD_PASSWORD,
+    },
+    Google: {
+        clientId: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        redirectUri: process.env.GOOGLE_REDIRECT_URI,
+    },
+    Hubspot: {
+        clientId: process.env.HUBSPOT_CLIENT_ID,
+        clientSecret: process.env.HUBSPOT_CLIENT_SECRET,
+        redirectUri: process.env.HUBSPOT_REDIRECT_URI,
+    },
+    Faceit: {
+        apiKey: process.env.FACEIT_API_KEY,
+    },
     Swagger: {
         Enabled: process.env.SWAGGER_ENABLED,
         Path: process.env.SWAGGER_PATH,

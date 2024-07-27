@@ -62,6 +62,10 @@ const proxmoxService = require('./routes/proxmox.router');
 const whatsappService = require('./routes/whatsapp.router');
 const plexService = require('./routes/plex.router');
 const gitlabService = require('./routes/gitlab.router');
+const nextcloudRouter = require('./routes/nextcloud.router');
+const googleRouter = require('./routes/google.router');
+const hubspotRouter = require('./routes/hubspot.router');
+const faceitRouter = require('./routes/faceit.router');
 
 // Utils
 const logger = require('./utils/winston.util');
@@ -69,6 +73,10 @@ const debugUtil = require('./utils/debug.util');
 
 // Store
 const reviewRouter = require('./routes/review.router');
+
+// Plugins
+const idGeneratorRouter = require('./plugins/idGenerator/idGenerator.router');
+const tournamentRouter = require('./plugins/tournamentManager/tournament.router');
 
 const app = express();
 
@@ -187,9 +195,17 @@ app.use('/api/proxmox', proxmoxService);
 app.use('/api/whatsapp', whatsappService);
 app.use('/api/plex', plexService);
 app.use('/api/gitlab', gitlabService);
+app.use('/api/nextcloud', nextcloudRouter);
+app.use('/api/google', googleRouter);
+app.use('/api/hubspot', hubspotRouter);
+app.use('/api/faceit', faceitRouter);
 
 // Store
 app.use('/api/review', reviewRouter);
+
+// Plugins
+app.use('/api/idGenerator', idGeneratorRouter);
+app.use('/api/tournaments', tournamentRouter);
 
 // Error handling middleware
 app.use(sentryMiddleware.errorHandler);

@@ -23,6 +23,7 @@
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.619.0",
     "@discordjs/rest": "^2.3.0",
+    "@hubspot/api-client": "^11.1.0",
     "@sentry/node": "^8.20.0",
     "axios": "^1.7.2",
     "body-parser": "^1.20.2",
@@ -45,6 +46,7 @@
     "express-rate-limit": "^7.4.0",
     "express-session": "^1.18.0",
     "express-validator": "^7.1.0",
+    "googleapis": "^140.0.1",
     "helmet": "^7.1.0",
     "http-proxy": "^1.18.1",
     "jsonwebtoken": "^9.0.2",
