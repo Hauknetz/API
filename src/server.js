@@ -76,7 +76,7 @@ const reviewRouter = require('./routes/review.router');
 
 // Plugins
 const idGeneratorRouter = require('./plugins/idGenerator/idGenerator.router');
-const tournamentRouter = require('./plugins/tournamentManager/tournament.router');
+const tournamentManagerRouter = require('./plugins/tournamentManager/tournament.router');
 
 const app = express();
 
@@ -205,7 +205,7 @@ app.use('/api/review', reviewRouter);
 
 // Plugins
 app.use('/api/idGenerator', idGeneratorRouter);
-app.use('/api/tournaments', tournamentRouter);
+app.use('/api/tournaments', tournamentManagerRouter);
 
 // Error handling middleware
 app.use(sentryMiddleware.errorHandler);
